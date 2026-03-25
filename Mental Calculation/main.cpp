@@ -128,8 +128,12 @@ int main() {
 		}
 	}*/
 
-	Engine engine;
-	engine.Instance().Start();
+	Engine engine = Engine::Instance();
+	engine.Init();
+	while (engine.Active()) {
+		engine.Start();
+	}
+	
 }
 
 
