@@ -1,6 +1,7 @@
 #include <iostream>
 #include <time.h>
 #include <vector>
+#include <Engine.h>
 
 enum class Operator{
 	ADDITION = 0,
@@ -115,7 +116,7 @@ bool Operation(Operator o) {
 
 
 int main() {
-	int op;
+	/*int op;
 	int score = 0;
 	srand(time(0));
 
@@ -125,8 +126,10 @@ int main() {
 		if (Operation((Operator)op)) {
 			score++;
 		}
-	}
+	}*/
 
+	Engine engine;
+	engine.Instance().Start();
 }
 
 
