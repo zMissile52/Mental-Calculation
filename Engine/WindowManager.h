@@ -8,8 +8,10 @@ public:
 	void Update();
 	void Render();
 
+	void InitScene(Scene* s);
+
 private:
 	sf::RenderWindow* window;
-
+	Scene* current = new Scene();
 };
 
