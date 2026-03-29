@@ -20,6 +20,10 @@ public:
 	template<typename ComponentType, typename ...param>
 	void AddComponent(param ...parm);
 
+	template<typename ComponentType>
+	ComponentType* GetComponent();
+
+private:
 	std::vector<Component*> components;
 };
 

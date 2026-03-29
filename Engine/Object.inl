@@ -6,3 +6,14 @@ void Object::AddComponent(param ...parameters) {
 
 	components.emplace_back(component);
 }
+
+template<typename ComponentType>
+ComponentType* Object::GetComponent() {
+	for (Component* c : components) {
+		if (ComponentType* search = dynamic_cast<ComponentType>(c)) {
+			return search;
+		}
+	}
+
+	return nullptr;
+}
