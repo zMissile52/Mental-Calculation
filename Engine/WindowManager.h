@@ -8,10 +8,11 @@ public:
 	void Update();
 	void Render();
 
-	void InitScene(Scene* s);
+	void AddScene(Scene* s);
 
 private:
 	sf::RenderWindow* window;
 	Scene* current = new Scene();
+	std::vector<Scene*> scenes;
 };
 

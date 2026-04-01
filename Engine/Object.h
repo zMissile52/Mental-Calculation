@@ -11,11 +11,11 @@ struct Transform {
 class Object
 {
 public: 
-	virtual void Init() {};
+	virtual void Init();
 
-	virtual void Update(float dt) {};
+	virtual void Update(float dt);
 
-	virtual void Render(sf::RenderWindow* w) {};
+	virtual void Render(sf::RenderWindow* w);
 
 	template<typename ComponentType, typename ...param>
 	void AddComponent(param ...parm);

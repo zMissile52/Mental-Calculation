@@ -33,6 +33,14 @@ int Divisible(int b) {
 	return res;
 }
 
+int RandomSign(int i) {
+	int r = rand() % 3;
+
+	if (r == 1) {
+		return -i;
+	}
+	return i;
+}
 
 int Resultat(int a, int b, Operator o) {
 	switch (o) {
@@ -81,12 +89,12 @@ bool Operation(Operator o) {
 	switch (o) {
 	case Operator::ADDITION:
 	case Operator::SOUSTRACTION:
-		a = rand() % 101;
-		b = rand() % 101;
+		a = RandomSign(rand() % 101);
+		b = RandomSign(rand() % 101);
 		break;
 	case Operator::MULTIPLICATION:
-		a = rand() % 11;
-		b = rand() % 11;
+		a = RandomSign(rand() % 11);
+		b = RandomSign(rand() % 11);
 		break;
 	case Operator::DIVISION:
 		b = rand() % 11;
@@ -111,12 +119,14 @@ bool Operation(Operator o) {
 	}
 
 	std::cout << "raté" << std::endl << std::endl;
+	std::cout << "resultat : " << res << std::endl << std::endl;
 	return false;
 }
 
 
 int main() {
-	/*int op;
+	
+	int op;
 	int score = 0;
 	srand(time(0));
 
@@ -126,14 +136,15 @@ int main() {
 		if (Operation((Operator)op)) {
 			score++;
 		}
-	}*/
+	}
 
+	/*
 	Engine engine = Engine::Instance();
 	engine.Init();
 	while (engine.Active()) {
 		engine.Start();
-	}
-	
+	} */
+
 }
 
 

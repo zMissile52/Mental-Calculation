@@ -13,5 +13,6 @@ public:
 
 	
 	std::vector<Object*> objects;
+	//std::vector<Object*> objectsToDelete;
 };
 

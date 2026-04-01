@@ -2,20 +2,20 @@
 
 void Scene::Init() {
 	for (Object* o : objects) {
-		//o->Init()
+		o->Init();
 	}
 }
 
 void Scene::Update(float dt)
 {
 	for (Object* o : objects) {
-		//o->Update(float dt);
+		o->Update(dt);
 	}
 }
 
 
 void Scene::Render(sf::RenderWindow* w) {
 	for (Object* o : objects) {
-		//o->Render(sf::RenderWindow* w);
+		o->Render(w);
 	}
 }

@@ -1,5 +1,14 @@
 #include "WindowManager.h"
 void WindowManager::Init() {
+	
+	if (scenes.size() <= 0) {
+		current = new Scene();
+	}
+	else {
+		current = scenes[0];
+	}
+
+
 	window = new sf::RenderWindow(sf::VideoMode(sf::Vector2u(600, 900)), "Title");
 	current->Init();
 }
@@ -22,4 +31,8 @@ void WindowManager::Update() {
 void WindowManager::Render() {
 	current->Render(window);
 	window->display();
+}
+
+void WindowManager::AddScene(Scene* scene) {
+	scenes.emplace_back(scene);
 }
