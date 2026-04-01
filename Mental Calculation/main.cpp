@@ -2,6 +2,7 @@
 #include <time.h>
 #include <vector>
 #include <Engine.h>
+#include "CalculScene.h"
 
 enum class Operator{
 	ADDITION = 0,
@@ -125,7 +126,7 @@ bool Operation(Operator o) {
 
 
 int main() {
-	
+	/*
 	int op;
 	int score = 0;
 	srand(time(0));
@@ -136,14 +137,19 @@ int main() {
 		if (Operation((Operator)op)) {
 			score++;
 		}
-	}
+	}*/
 
-	/*
+	
 	Engine engine = Engine::Instance();
+
+	CalculScene* calculScene{ new CalculScene };
+
+	engine.GetWindowManager()->AddScene(calculScene);
+
 	engine.Init();
 	while (engine.Active()) {
 		engine.Start();
-	} */
+	} 
 
 }
 

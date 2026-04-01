@@ -15,3 +15,8 @@ void Engine::Start()
 	window->Update();
 	window->Render();
 }
+
+WindowManager* Engine::GetWindowManager()
+{
+	return window;
+}

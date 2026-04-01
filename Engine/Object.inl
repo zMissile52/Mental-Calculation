@@ -1,10 +1,12 @@
 #pragma once
 
 template<typename ComponentType, typename ...param>
-void Object::AddComponent(param ...parameters) {
-	ComponentType* component = new Component(parameters);
-
+ComponentType* Object::AddComponent(param ...parameters) {
+	ComponentType* component = new ComponentType(parameters...);
+	component->owner = this;
 	components.emplace_back(component);
+
+	return component;
 }
 
 template<typename ComponentType>

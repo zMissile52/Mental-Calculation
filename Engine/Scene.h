@@ -11,7 +11,8 @@ public:
 
 	virtual void Render(sf::RenderWindow* w);
 
-	
+	Object* CreateObject();
+
 	std::vector<Object*> objects;
 	//std::vector<Object*> objectsToDelete;
 };

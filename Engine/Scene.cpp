@@ -19,3 +19,11 @@ void Scene::Render(sf::RenderWindow* w) {
 		o->Render(w);
 	}
 }
+
+Object* Scene::CreateObject()
+{
+	Object* object = new Object();
+	objects.emplace_back(object);
+
+	return object;
+}

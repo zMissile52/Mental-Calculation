@@ -3,20 +3,20 @@
 
 void Object::Init() {
 	for (Component* c : components) {
-		//c->Init(dt);
+		c->Init();
 	}
 }
 
 
 void Object::Update(float dt) {
 	for (Component* c : components) {
-		//c->Update(dt);
+		c->Update(dt);
 	}
 }
 
 void Object::Render(sf::RenderWindow* w) {
 	for (Component* c : components) {
-		//c->Render(w);
+		c->Render(w);
 	}
 }
 

@@ -12,10 +12,11 @@ public:
 
 	bool Active() { return isActive; };
 
-	void Stop();
+	//void Stop();
 
+	WindowManager* GetWindowManager();
 private:
-	WindowManager* window = new WindowManager();
+	WindowManager* window{ new WindowManager };
 	bool isActive = true;
 };
 

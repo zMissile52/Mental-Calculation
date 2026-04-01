@@ -11,8 +11,8 @@ public:
 	void AddScene(Scene* s);
 
 private:
-	sf::RenderWindow* window;
-	Scene* current = new Scene();
+	sf::RenderWindow* window{};
+	Scene* current = { new Scene };
 	std::vector<Scene*> scenes;
 };
 

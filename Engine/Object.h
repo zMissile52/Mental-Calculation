@@ -18,7 +18,7 @@ public:
 	virtual void Render(sf::RenderWindow* w);
 
 	template<typename ComponentType, typename ...param>
-	void AddComponent(param ...parm);
+	ComponentType* AddComponent(param ...parm);
 
 	template<typename ComponentType>
 	ComponentType* GetComponent();
