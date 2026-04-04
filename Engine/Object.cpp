@@ -1,6 +1,11 @@
 #include "Object.h"
 
 
+Object::Object(sf::Vector2f pos)
+{
+	transform.pos = pos;
+}
+
 void Object::Init() {
 	for (Component* c : components) {
 		c->Init();
@@ -20,7 +25,7 @@ void Object::Render(sf::RenderWindow* w) {
 	}
 }
 
-Transform* Object::GetTransform()
+Transform& Object::GetTransform()
 {
 	return transform;
 }

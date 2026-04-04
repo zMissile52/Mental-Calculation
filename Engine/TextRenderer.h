@@ -9,6 +9,10 @@ public:
 
 	void Render(sf::RenderWindow* w) override;
 
+	void SetText(std::string s);
+
+	std::string GetText();
+
 private:
 	sf::Font fRodin = sf::Font("Assets/Font/FOT-Rodin Pro DB.otf");
 	sf::Text text;

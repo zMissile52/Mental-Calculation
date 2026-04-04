@@ -13,6 +13,8 @@ public:
 
 	Object* CreateObject();
 
+	Object* CreateObject(float x, float y);
+
 	std::vector<Object*> objects;
 	//std::vector<Object*> objectsToDelete;
 };

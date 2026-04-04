@@ -13,13 +13,16 @@ class Component;
 class Object
 {
 public: 
+	Object() {};
+	Object(sf::Vector2f pos);
+
 	virtual void Init();
 
 	virtual void Update(float dt);
 
 	virtual void Render(sf::RenderWindow* w);
 
-	Transform* GetTransform();
+	Transform& GetTransform();
 
 	template<typename ComponentType, typename ...param>
 	ComponentType* AddComponent(param ...parm);
@@ -29,7 +32,7 @@ public:
 
 private:
 	std::vector<Component*> components;
-	Transform* transform = new Transform();
+	Transform transform;
 };
 
 #include "Object.inl"

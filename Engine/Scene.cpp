@@ -25,5 +25,13 @@ Object* Scene::CreateObject()
 	Object* object = new Object();
 	objects.emplace_back(object);
 
+	return CreateObject(0.f, 0.f);
+}
+
+Object* Scene::CreateObject(float x, float y)
+{
+	Object* object = new Object(sf::Vector2f(x, y));
+	objects.emplace_back(object);
+
 	return object;
 }

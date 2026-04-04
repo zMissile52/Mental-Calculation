@@ -6,7 +6,7 @@ class CalculScene : public Scene
 {
 public:
 	CalculScene() {
-		Object* text = CreateObject();
+		Object* text = CreateObject(300.f, 450.f);
 		
 		text->AddComponent<TextRenderer>("test");
 	}
