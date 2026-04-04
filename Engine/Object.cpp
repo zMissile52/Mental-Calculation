@@ -20,3 +20,8 @@ void Object::Render(sf::RenderWindow* w) {
 	}
 }
 
+Transform* Object::GetTransform()
+{
+	return transform;
+}
+

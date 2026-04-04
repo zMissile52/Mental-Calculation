@@ -12,7 +12,7 @@ public:
 
 private:
 	sf::RenderWindow* window{};
-	Scene* current = { new Scene };
+	Scene* current;
 	std::vector<Scene*> scenes;
 };
 
