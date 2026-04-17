@@ -4,12 +4,12 @@
 #include <Engine.h>
 #include "CalculScene.h"
 
-enum class Operator{
-	ADDITION = 0,
-	SOUSTRACTION = 1,
-	MULTIPLICATION = 2,
-	DIVISION = 3
-};
+//enum class Operator{
+//	ADDITION = 0,
+//	SOUSTRACTION = 1,
+//	MULTIPLICATION = 2,
+//	DIVISION = 3
+//};
 
 // addition -> a et b appartient [0, 100]
 // soustraction -> a et b appartient  [0, 100]
@@ -126,8 +126,8 @@ bool Operation(Operator o) {
 
 
 int main() {
-	/*
-	int op;
+	
+	/*int op;
 	int score = 0;
 	srand(time(0));
 
@@ -138,8 +138,9 @@ int main() {
 			score++;
 		}
 	}*/
-
 	
+	
+	srand(time(0));
 	Engine engine = Engine::Instance();
 
 	CalculScene* calculScene{ new CalculScene };
@@ -150,6 +151,7 @@ int main() {
 	while (engine.Active()) {
 		engine.Start();
 	} 
+	
 
 }
 

@@ -18,12 +18,18 @@ void TextRenderer::Update(float dt) {
 
 void TextRenderer::Render(sf::RenderWindow* w)
 {
-	w->draw(text);
+	//#if Debug
+		w->draw(text);
+	//#endif
 }
 
 void TextRenderer::SetText(std::string s)
 {
 	text.setString(s);
+
+	sf::Vector2f bounds = text.getGlobalBounds().size;
+
+	text.setOrigin(sf::Vector2f(bounds.x / 2, bounds.y / 2));
 }
 
 std::string TextRenderer::GetText() {

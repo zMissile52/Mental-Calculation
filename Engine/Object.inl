@@ -12,7 +12,7 @@ ComponentType* Object::AddComponent(param ...parameters) {
 template<typename ComponentType>
 ComponentType* Object::GetComponent() {
 	for (Component* c : components) {
-		if (ComponentType* search = dynamic_cast<ComponentType>(c)) {
+		if (ComponentType* search = dynamic_cast<ComponentType*>(c)) {
 			return search;
 		}
 	}
