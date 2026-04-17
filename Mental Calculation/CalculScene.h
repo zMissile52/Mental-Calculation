@@ -10,6 +10,7 @@ enum class Operator {
 	DIVISION = 3
 };
 
+
 class CalculScene : public Scene
 {
 public:
@@ -22,24 +23,49 @@ public:
 
 	void setCalcul() {
 		TextRenderer* render = calcul->GetComponent<TextRenderer>();
-		int a = RandomNumber(10), b = RandomNumber(10);
-		std::string operation = StringOperator((Operator)RandomNumber(3));
-		render->SetText(std::to_string(a) +  operation + std::to_string(b));
-	}
 
-	//random number between 0 - range
-	int RandomNumber(int range) {
-		return rand() % range + 1;
-	}
+		Operator operation = (Operator)RandomNumber(3);
 
-	int RandomSign(int i) {
-		int r = rand() % 3;
 
-		if (r == 1) {
-			return -i;
+		int a = 0, b = 0;
+
+		switch (operation) {
+		case Operator::ADDITION:
+		case Operator::SOUSTRACTION:
+			a = RandomSign(rand() % 101);
+			b = RandomSign(rand() % 101);
+			break;
+		case Operator::MULTIPLICATION:
+			a = RandomSign(rand() % 11);
+			b = RandomSign(rand() % 11);
+			break;
+		case Operator::DIVISION:
+			b = rand() % 11;
+			// calcul et recupere les divisible de b, on en choisi un au hasard qui sera egale à a
+			a = Divisible(b);
+			break;
 		}
-		return i;
+		
+		render->SetText(std::to_string(a) + StringOperator(operation) + std::to_string(b));
 	}
+
+	int Divisible(int b) {
+		std::vector<int> divisibles = Divisibles(b);
+		int res = divisibles[(rand() % divisibles.size())];
+		return res;
+	}
+
+	std::vector<int> Divisibles(int b) {
+	std::vector<int> list;
+	for (int i = b; i <= 100; i++) {
+		if (i % b == 0) {
+			std::cout << i << std::endl;
+			list.emplace_back(i);
+		}
+	}
+
+	return list;
+}
 
 	int Resultat(int a, int b, Operator o) {
 		switch (o) {
@@ -61,6 +87,20 @@ public:
 		}
 	}
 
+
+	//random number between 0 - range
+	int RandomNumber(int range) {
+		return rand() % range + 1;
+	}
+
+	int RandomSign(int i) {
+		int r = rand() % 3;
+
+		if (r == 1) {
+			return -i;
+		}
+		return i;
+	}
 
 	std::string StringOperator(Operator o) {
 		switch (o) {
@@ -84,4 +124,3 @@ public:
 
 	Object* calcul;
 };
-

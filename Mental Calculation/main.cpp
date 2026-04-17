@@ -20,7 +20,8 @@
 std::vector<int> Divisibles(int b) {
 	std::vector<int> list;
 	for (int i = b; i <= 100; i++) {
-		if (b % i == 0) {
+		if (i % b == 0) {
+			std::cout << i << std::endl;
 			list.emplace_back(i);
 		}
 	}
@@ -29,6 +30,9 @@ std::vector<int> Divisibles(int b) {
 }
 
 int Divisible(int b) {
+	if (b == 0) {
+		return 0;
+	}
 	std::vector<int> divisibles = Divisibles(b);
 	int res = divisibles[rand() % divisibles.size()];
 	return res;
@@ -87,7 +91,7 @@ bool Operation(Operator o) {
 	int a = 0, b = 0;
 	int res;
 
-	switch (o) {
+	switch (Operator::DIVISION) {
 	case Operator::ADDITION:
 	case Operator::SOUSTRACTION:
 		a = RandomSign(rand() % 101);
@@ -104,12 +108,12 @@ bool Operation(Operator o) {
 		break;
 	}
 
-	res = Resultat(a, b, o);
+	res = Resultat(a, b, Operator::DIVISION);
 
 	int input = 0;
 
 	std::cout << a;
-	printOperator(o);
+	printOperator(Operator::DIVISION);
 	std::cout << b << " ?" << std::endl;
 	std::cout << "Entrer une réponse :" << std::endl;
 	std::cin >> input;
@@ -150,7 +154,7 @@ int main() {
 	engine.Init();
 	while (engine.Active()) {
 		engine.Start();
-	} 
+	}
 	
 
 }
