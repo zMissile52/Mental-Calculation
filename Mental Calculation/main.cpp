@@ -147,9 +147,7 @@ int main() {
 	srand(time(0));
 	Engine engine = Engine::Instance();
 
-	CalculScene* calculScene{ new CalculScene };
-
-	engine.GetWindowManager()->AddScene(calculScene);
+	engine.GetWindowManager()->AddScene<CalculScene>();
 
 	engine.Init();
 	while (engine.Active()) {

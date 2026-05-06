@@ -5,11 +5,11 @@ void WindowManager::Init() {
 		current = new Scene();
 	}
 	else {
-		current = scenes[0];
+		current = scenes[0].get();
 	}
 
 
-	window = new sf::RenderWindow(sf::VideoMode(sf::Vector2u(600, 900)), "Title");
+	window = std::make_unique<sf::RenderWindow>(sf::VideoMode(sf::Vector2u(600, 900)), "Title");
 	current->Init();
 }
 
@@ -29,10 +29,7 @@ void WindowManager::Update() {
 }
 
 void WindowManager::Render() {
-	current->Render(window);
+	current->Render(window.get());
 	window->display();
 }
 
-void WindowManager::AddScene(Scene* scene) {
-	scenes.emplace_back(scene);
-}

@@ -67,5 +67,8 @@
     <None Include="Object.inl">
       <Filter>Fichiers d%27en-tête</Filter>
     </None>
+    <None Include="WindowManager.inl">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -8,11 +8,13 @@ public:
 	void Update();
 	void Render();
 
-	void AddScene(Scene* s);
+	template<typename SceneType>
+	void AddScene();
 
 private:
-	sf::RenderWindow* window{};
+	std::unique_ptr<sf::RenderWindow> window{};
 	Scene* current;
-	std::vector<Scene*> scenes;
+	std::vector<std::unique_ptr<Scene>> scenes;
 };
 
+#include "WindowManager.inl"

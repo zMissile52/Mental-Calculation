@@ -15,9 +15,8 @@ class CalculScene : public Scene
 {
 public:
 	CalculScene() {
-		calcul = CreateObject(300.f, 450.f);
+		calcul = CreateObject(200.f, 250.f);
 		calcul->AddComponent<TextRenderer>("");
-
 		setCalcul();
 	}
 
@@ -46,7 +45,7 @@ public:
 			break;
 		}
 		
-		render->SetText(std::to_string(a) + StringOperator(operation) + std::to_string(b));
+		render->SetText(std::to_string(a) + StringOperator(operation) + std::to_string(b) + " = ");
 	}
 
 	int Divisible(int b) {

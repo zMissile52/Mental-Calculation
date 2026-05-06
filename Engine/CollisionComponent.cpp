@@ -16,7 +16,5 @@ void CollisionComponent::Update(float dt) {
 }
 
 void CollisionComponent::Render(sf::RenderWindow* w) {
-#if DEBUG
 	w->draw(rect);
-#endif
 }
