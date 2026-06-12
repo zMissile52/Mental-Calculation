@@ -10,8 +10,9 @@ CollisionComponent::CollisionComponent(float x, float y)
 
 	sf::Vector2f bound = rect.getGlobalBounds().size;
 
-	rect.setOrigin(sf::Vector2f(bound.x, bound.y));
+	rect.setOrigin(sf::Vector2f(bound.x / 2, bound.y / 2));
 }
+
 
 
 void CollisionComponent::Update(float dt) {
@@ -20,5 +21,14 @@ void CollisionComponent::Update(float dt) {
 
 void CollisionComponent::Render(sf::RenderWindow* w) {
 	w->draw(rect);
+}
+
+bool CollisionComponent::isClickOn()
+{
+	sf::Vector2i mousePos = sf::Mouse::getPosition();
+	if (sf::Mouse::isButtonPressed) {
+		
+	}
+	return false;
 }
 
