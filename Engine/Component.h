@@ -9,6 +9,6 @@ public:
 	virtual void Update(float dt) {};
 	virtual void Render(sf::RenderWindow* w) {};
 
-	Object* owner;
+	Object* owner = nullptr;
 };
 

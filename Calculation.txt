@@ -1,0 +1,11 @@
+
+
+- mettre les fonction de calcul dans une autre classe
+
+- saisi du resultat
+-> faire le clavier
+-----> le lier a une case resultat
+-> ajoute un chiffre
+-> supprime un chiffre
+-> traduction string en float
+

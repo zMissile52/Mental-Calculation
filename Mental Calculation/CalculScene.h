@@ -1,6 +1,7 @@
 #pragma once
 #include <Scene.h>
 #include <TextRenderer.h>
+#include <CollisionComponent.h>
 #include <iostream>
 
 enum class Operator {
@@ -17,7 +18,14 @@ public:
 	CalculScene() {
 		calcul = CreateObject(200.f, 250.f);
 		calcul->AddComponent<TextRenderer>("");
+
 		setCalcul();
+
+		Object* c = CreateObject(100.f, 100.f);
+
+		c->AddComponent<CollisionComponent>(50.f, 50.f);
+
+		
 	}
 
 	void setCalcul() {

@@ -13,7 +13,7 @@ public:
 
 private:
 	std::unique_ptr<sf::RenderWindow> window{};
-	Scene* current;
+	Scene* current = nullptr;
 	std::vector<std::unique_ptr<Scene>> scenes;
 };
 
