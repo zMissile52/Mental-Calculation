@@ -22,13 +22,13 @@ public:
 	void Update(float dt) override;
 
 	void setCalcul();
+	
+	int Resultat(int a, int b, Operator o);
 
+private:
 	int Divisible(int b);
 
 	std::vector<int> Divisibles(int b);
-
-	int Resultat(int a, int b, Operator o);
-
 
 	//random number between 0 - range
 	int RandomNumber(int range);
@@ -37,10 +37,11 @@ public:
 
 	std::string StringOperator(Operator o);
 
-private:
 	int a = 0, b = 0;
 
 	Operator operation;
+
+
 
 	std::pair<bool, bool> tempInput = std::pair(false, false);
 

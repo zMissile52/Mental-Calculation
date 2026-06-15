@@ -1,4 +1,5 @@
 #include "WindowManager.h"
+#include "KeyboardInput.h"
 void WindowManager::Init() {
 	
 	if (scenes.size() <= 0) {
@@ -12,6 +13,7 @@ void WindowManager::Init() {
 	window = std::make_unique<sf::RenderWindow>(sf::VideoMode(sf::Vector2u(600, 900)), "Title");
 	current->Init();
 }
+
 
 void WindowManager::Update() {
 	window->clear();

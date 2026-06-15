@@ -1,4 +1,3 @@
-
 - saisi du resultat
 -> faire le clavier
 -----> faire les collisions
