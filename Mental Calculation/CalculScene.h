@@ -15,8 +15,8 @@ public:
 		calcul = CreateObject(200.f, 250.f);
 		calcul->AddComponent<CalculGenerator>();
 
-		Object* c = CreateObject(0.f, 0.f);
-
+		Object* c = CreateObject(300.f, 450.f);
+		c->AddComponent<CollisionComponent>(200.f, 200.f);
 		
 	}
 
