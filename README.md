@@ -6,3 +6,10 @@ Las addition et soustraction ont les nombres negatifs compris entre 1-100 tandis
 
 
 Moteur en cours de création.
+
+J'ai pu crée le générateur de calcul.
+
+R : permet de changer le calcul / passer au calcul suivant
+
+
+Je réfléchis encore sur comment je pourrais gérer les inputs.
