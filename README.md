@@ -9,7 +9,7 @@ Moteur en cours de création.
 
 J'ai pu crée le générateur de calcul.
 
-R : permet de changer le calcul / passer au calcul suivant
+Appuyer sur R : permet de changer le calcul / passer au calcul suivant
 
 
 Je réfléchis encore sur comment je pourrais gérer les inputs.
