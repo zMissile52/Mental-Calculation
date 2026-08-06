@@ -6,7 +6,7 @@ void CalculGenerator::Init() {
 		GetOwner()->AddComponent<TextRenderer>("");
 	}
 
-	
+	setCalcul();
 }
 
 void CalculGenerator::Update(float dt) {
