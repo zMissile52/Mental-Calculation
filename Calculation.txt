@@ -1,0 +1,14 @@
+- saisi du resultat
+-> faire le clavier
+-----> faire les collisions
+---------> on a la hitbox
+---------> compare en fonction de la position de la souris 
+---------> compare en fonction de la hitbox d'une autre hitbox (pas besoin dans l'imédiat)
+-----> le lier a une case resultat
+-----> input en fonction de la souris
+-----> input en fonction du clavier
+
+-> ajoute un chiffre
+-> supprime un chiffre
+-> traduction string en float
+
