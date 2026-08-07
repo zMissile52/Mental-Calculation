@@ -53,10 +53,10 @@ bool CollisionComponent::isInRect() {
 	sf::Vector2f rectPos = GetOwner()->GetTransform().pos;
 	sf::Vector2f rectSize = rect.getSize();
 
-	std::cout << "mouseX between : " << rectPos.x - (rectSize.x / 2) << " and " << rectPos.x + (rectSize.x / 2) << std::endl;
+	/*std::cout << "mouseX between : " << rectPos.x - (rectSize.x / 2) << " and " << rectPos.x + (rectSize.x / 2) << std::endl;
 	std::cout << "mouseY between : " << rectPos.y - (rectSize.y / 2) << " and " << rectPos.y + (rectSize.y / 2) << std::endl;
 
-	std::cout << "mouse position : " << mousePos.x << ", " << mousePos.y << std::endl;
+	std::cout << "mouse position : " << mousePos.x << ", " << mousePos.y << std::endl;*/
 
 	if (mousePos.x >= rectPos.x - (rectSize.x / 2) && mousePos.x <= rectPos.x + (rectSize.x / 2) &&
 		mousePos.y >= rectPos.y - (rectSize.y / 2) && mousePos.y <= rectPos.y + (rectSize.y / 2)) {

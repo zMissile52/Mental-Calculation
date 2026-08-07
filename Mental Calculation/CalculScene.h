@@ -22,6 +22,8 @@ public:
 			}
 		}
 		
+		Object* c = CreateObject((wX - buttonSize * 3) / 2 + buttonSize / 2 + 1 * gapX, (wY / 2) + 3 * gapY);
+		c->AddComponent<CollisionComponent>(buttonSize, buttonSize);
 		
 		
 	}

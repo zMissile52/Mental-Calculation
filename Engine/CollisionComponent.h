@@ -7,6 +7,8 @@ class CollisionComponent : public Component
 {
 public:
 	CollisionComponent(float sizeX, float sizeY);
+	CollisionComponent(float sizeX, float sizeY, std::function<float()> f);
+
 	void Update(float dt) override;
 	void Render(sf::RenderWindow* w) override;
 
@@ -19,7 +21,8 @@ private:
 	bool isInRect();
 	sf::RectangleShape rect;
 	std::pair<bool, bool> mouseInput = std::pair(false, false);
-	std::function<void()> actionWhenPressMouse();
+	//template<typename Value>
+	//std::function<Value()> actionWhenPressMouse;
 
 
 };
