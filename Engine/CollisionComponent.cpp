@@ -1,4 +1,5 @@
 #include "CollisionComponent.h"
+#include "Engine.h"
 
 CollisionComponent::CollisionComponent(float x, float y)
 {
@@ -27,8 +28,8 @@ void CollisionComponent::Render(sf::RenderWindow* w) {
 bool CollisionComponent::isClickOn()
 {
 	sf::Vector2i mousePos = sf::Mouse::getPosition();
-	if (isMousePressed() && isInRect()) { // et position de la souris dans le rect
-		
+	if (isMousePressed() && isInRect()) {
+		// mettre les fonction qui vont permettre de changer le texte de saisi
 		std::cout << "c'est dans le rectangle" << std::endl;
 	}
 
@@ -47,7 +48,8 @@ bool CollisionComponent::isMousePressed() {
 
 bool CollisionComponent::isInRect() {
 //probleme: passer en paramettre la fenetre pour avec les position de la souris en fonction de celle ci
-	sf::Vector2i mousePos = sf::Mouse::getPosition();
+	sf::RenderWindow* window = Engine::Instance().GetWindowManager()->GetWindow();
+	sf::Vector2i mousePos = sf::Mouse::getPosition(*window);
 	sf::Vector2f rectPos = GetOwner()->GetTransform().pos;
 	sf::Vector2f rectSize = rect.getSize();
 

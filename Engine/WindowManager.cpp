@@ -35,3 +35,8 @@ void WindowManager::Render() {
 	window->display();
 }
 
+sf::RenderWindow* WindowManager::GetWindow()
+{
+	return window.get();
+}
+

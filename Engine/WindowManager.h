@@ -11,6 +11,8 @@ public:
 	template<typename SceneType>
 	void AddScene();
 
+	sf::RenderWindow* GetWindow();
+
 private:
 	std::unique_ptr<sf::RenderWindow> window{};
 	Scene* current = nullptr;
