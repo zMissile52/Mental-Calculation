@@ -1,6 +1,7 @@
 #pragma once
 #include "Component.h"
 #include <iostream>
+#include <functional>
 
 class CollisionComponent : public Component
 {
@@ -18,6 +19,7 @@ private:
 	bool isInRect();
 	sf::RectangleShape rect;
 	std::pair<bool, bool> mouseInput = std::pair(false, false);
+	std::function<void()> actionWhenPressMouse();
 
 
 };
